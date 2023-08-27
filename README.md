@@ -1,3 +1,7 @@
+# Dependacies to install:
+
+- $ ng add @angular/material
+
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
