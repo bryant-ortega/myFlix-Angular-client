@@ -2,6 +2,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
+type User = {
+  _id?: string;
+  Username?: string;
+  Password?: string;
+  Email?: string;
+  FavoriteMovies?: [];
+};
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -15,7 +23,7 @@ export class UserProfileComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
-    public router: Router
+    private router: Router
   ) { }
 
   ngOnInit(): void {
