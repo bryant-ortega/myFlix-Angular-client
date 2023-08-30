@@ -1,6 +1,8 @@
 // src/app/user-profile/user-profile.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 type User = {
   _id?: string;
@@ -23,7 +25,7 @@ export class UserProfileComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
-    private router: Router
+    public router: Router
   ) { }
 
   ngOnInit(): void {

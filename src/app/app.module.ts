@@ -22,6 +22,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 const appRoutes: Routes = [
@@ -40,24 +41,25 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     UserProfileComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    HttpClientModule,    
+    HttpClientModule,
     AppRoutingModule,
-    FormsModule, 
-    BrowserAnimationsModule, 
-    MatDialogModule, 
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
     MatInputModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatCardModule,
-    MatFormFieldModule, 
+    MatFormFieldModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

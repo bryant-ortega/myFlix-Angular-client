@@ -12,8 +12,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
@@ -35,17 +33,18 @@ export class UserLoginFormComponent implements OnInit {
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe(
       (result) => {
-        localStorage.setItem('user', result.user.Username);
-        localStorage.setItem('token', result.token);
-        this.router.navigate(['movies']);
-        // Logic for a successful user registration goes here! 
+        // Logic for a successful user registration goes here!
         this.dialogRef.close(); // This will close the modal on success!
-        this.snackBar.open(result, 'OK', {
+        this.snackBar.open('user logged in successfully!', 'OK', {
           duration: 2000,
         });
+
+        localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('token', result.token);
+        this.router.navigate(['movies']);
       },
-      (result) => {
-        this.snackBar.open(result, 'OK', {
+      (response) => {
+        this.snackBar.open(response, 'OK', {
           duration: 2000,
         });
       }
