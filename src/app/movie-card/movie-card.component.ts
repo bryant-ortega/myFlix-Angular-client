@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MovieDetailDialogComponent } from '../movie-detail-dialog/movie-detail-dialog.component';
 import { Router } from '@angular/router';
 
 
@@ -43,6 +44,33 @@ export class MovieCardComponent {
     });
   }
 
+  openGenreDialog(genre: any): void {
+    this.dialog.open(MovieDetailDialogComponent, {
+      data: {
+        title: genre.Name,
+        content: genre.Description,
+      },
+    });
+  }
+
+  openSynopsisDialog(synopsis: string): void {
+    this.dialog.open(MovieDetailDialogComponent, {
+      data: {
+        title: 'Description',
+        content: synopsis,
+      },
+    });
+  }
+
+  openDirectorDialog(director: any): void {
+    this.dialog.open(MovieDetailDialogComponent, {
+      data: {
+        title: director.Name,
+        content: director.Bio,
+      },
+    });
+  }
+
   addFavorite(id: string): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe(() => {
       this.snackBar.open('added to favorites', 'OK', {
@@ -50,7 +78,7 @@ export class MovieCardComponent {
       });
     });
   }
-  
+
   removeFavorite(id: string): void {
     this.fetchApiData.removeFavoriteMovie(id).subscribe(() => {
       this.snackBar.open('removed from favorites', 'OK', {

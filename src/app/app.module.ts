@@ -23,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MovieDetailDialogComponent } from './movie-detail-dialog/movie-detail-dialog.component';
 
 
 const appRoutes: Routes = [
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     UserProfileComponent,
     NavigationComponent,
+    MovieDetailDialogComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
