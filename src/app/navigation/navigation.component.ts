@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
+
+/**
+ * allows user to navigate pages from static menu.
+ */
 export class NavigationComponent {
   constructor(
     public fetchApiData: FetchApiDataService,

@@ -19,10 +19,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -31,7 +28,16 @@
     "strictTemplates": true
   },
   "typedocOptions": {
-        "entryPoints": ["src/index.ts"],
-        "out": "docs"
-    }
+    "entryPoints": [
+      "src/app/fetch-api-data.service.ts",
+      "src/app/welcome-page/welcome-page.component.ts",
+      "src/app/user-registration-form/user-registration-form.component.ts",
+      "src/app/user-profile/user-profile.component.ts",
+      "src/app/user-login-form/user-login-form.component.ts",
+      "src/app/navigation/navigation.component.ts",
+      "src/app/movie-detail-dialog/movie-detail-dialog.component.ts",
+      "src/app/movie-card/movie-card.component.ts"
+    ],
+    "out": "docs"
+  }
 }
