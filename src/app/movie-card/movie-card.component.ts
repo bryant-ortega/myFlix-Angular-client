@@ -43,7 +43,9 @@ export class MovieCardComponent {
       return this.movies;
     });
   }
-
+  /**
+   * Opens the genre dialog with additional information
+   */
   openGenreDialog(genre: any): void {
     this.dialog.open(MovieDetailDialogComponent, {
       data: {
@@ -53,6 +55,9 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * Opens the synopsis dialog showing the movie description
+   */
   openSynopsisDialog(synopsis: string): void {
     this.dialog.open(MovieDetailDialogComponent, {
       data: {
@@ -62,6 +67,9 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * Opens the director dialog with additional information
+   */
   openDirectorDialog(director: any): void {
     this.dialog.open(MovieDetailDialogComponent, {
       data: {

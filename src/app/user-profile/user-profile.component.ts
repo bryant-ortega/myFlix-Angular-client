@@ -43,11 +43,17 @@ export class UserProfileComponent implements OnInit {
       Password: ""
     }
   }
-
+/**
+ * gets the user information from the database.
+ * @returns user information and list of favorite movies
+ */
   getUser(): User {
     return JSON.parse(localStorage.getItem('user') || '{}');
   }
-
+  
+/**
+ * updates the existing user information with new information in form inputs
+ */
   updateUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
       localStorage.setItem('user', JSON.stringify(result));

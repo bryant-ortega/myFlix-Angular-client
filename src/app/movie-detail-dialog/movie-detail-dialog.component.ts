@@ -7,6 +7,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./movie-detail-dialog.component.scss'],
 })
 export class MovieDetailDialogComponent {
+
+  /**
+   * 
+   * @param data data from the selected movie
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
